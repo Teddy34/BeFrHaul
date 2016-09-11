@@ -16,7 +16,13 @@ import {
 import tradeRoutes from '../assets/tradeRoutes';
 const getLabel = (route) => (route.type + ': ' + route.origin + (route.isBothWays? ' <=> ':' => ') + route.destination +(route.isFixedVolumeCharge?" full freighter":""));
 
-const formatCost = (value) => numbro(value).format();
+const formatCost = (value) => {
+    let formattedValue = numbro(value).format('0a');
+    if (numbro(formattedValue).value() < value) {
+        formattedValue = numbro(formattedValue.slice(0,-1)).add(1).value() + formattedValue.slice(-1);
+    }
+    return numbro(value).format() + ' ('+formattedValue+') isk';
+};
 
 const onSelectedRouteChanged = (event, key, payload) => onRouteChanged(payload);
 const onSelectedVolumeChanged = (event, value) => onVolumeChanged(value);
