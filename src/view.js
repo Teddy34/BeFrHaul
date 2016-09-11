@@ -43,6 +43,18 @@ const View = (props) => (
         <br/>
         <br/>
         <div className='result'>Minimum fee: {formatCost(props.state.cost)}</div>
+        <br/>
+        <div className='doc'>
+            '.' is a decimal separator (10.2) <br/>
+            ',' is a thousands separator (1,234,456)<br/>
+            You can use 'k', 'm', 'b' for values (1.12b)
+        </div>
+        <br/>
+        <div className='disclaimer'>
+            Courtesy of Tethys Luxor, for Beyond Frontier
+        </div>
+        <br/>
+
     </div>
 );
 
