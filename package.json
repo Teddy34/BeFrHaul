@@ -24,6 +24,7 @@
     "localforage": "^1.4.2",
     "lodash": "^4.15.0",
     "material-ui": "^0.15.4",
+    "numbro": "^1.9.3",
     "react": "^15.0.2",
     "react-dom": "^15.0.2",
     "react-tap-event-plugin": "^1.0.0",

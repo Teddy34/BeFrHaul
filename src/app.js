@@ -6,15 +6,21 @@ injectTapEventPlugin();
 
 import _ from 'lodash';
 import View from './view';
+import {getState, registerCallback} from './model';
 
 const App = () => (
   <MuiThemeProvider>
-    <View/>
+    <View state={getState()}/>
   </MuiThemeProvider>
 );
 
-ReactDOM.render(
-    <App />,
-  document.getElementById('app')
-);
+const updateUI = () => {
+	ReactDOM.render(<App />,document.getElementById('app'));
+};
+
+registerCallback(updateUI);
+
+//initial ui
+updateUI();
+
 
