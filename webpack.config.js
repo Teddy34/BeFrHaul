@@ -1,5 +1,6 @@
 var path = require('path');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
 	entry: ['./src/app.js'],
@@ -8,7 +9,8 @@ module.exports = {
 		filename: 'appBundle.js'
 	},
 	module: {
-		loaders: [{
+		loaders: [
+		{
 			test: /\.css$/,
 			loaders: ['style', 'css']
 		}, {
@@ -23,6 +25,10 @@ module.exports = {
 	plugins: [
 		new ExtractTextPlugin("style.css", {
 			allChunks: true
-		})
+		}),
+		new HtmlWebpackPlugin({
+		    title: 'BeFr Hauling fee calculator',
+		    filename: 'index.html'
+   		})
 	]
 };

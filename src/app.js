@@ -14,8 +14,11 @@ const App = () => (
   </MuiThemeProvider>
 );
 
+const root = document.createElement('div');;
+document.body.appendChild(root)
+
 const updateUI = () => {
-	ReactDOM.render(<App />,document.getElementById('app'));
+	ReactDOM.render(<App />, root);
 };
 
 registerCallback(updateUI);
