@@ -1,0 +1,19 @@
+.disclaimer {
+	font-size: 13px;
+}
+
+#text-field-volume, #text-field-collateral {
+	text-align: right;
+}
+
+.input-helper {
+	margin-left: 10px;
+}
+
+.doc, .disclaimer {
+	padding:15px;
+}
+
+.result {
+	margin-top: 10px;
+}
