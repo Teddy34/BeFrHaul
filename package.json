@@ -1,7 +1,8 @@
 {
   "scripts": {
     "webpack": "webpack --watch",
-    "server": "browser-sync --port 4000 start --server \"build\" --files \"build\""
+    "server": "browser-sync --port 4000 start --server \"build\" --files \"build\"",
+    "production": "webpack -p --config webpack.production.config.js"
   },
   "devDependencies": {
     "babel-core": "^6.8.0",

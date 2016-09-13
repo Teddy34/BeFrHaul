@@ -23,14 +23,24 @@ module.exports = {
 			},
 		}]
 	},
-	devtool: 'eval',
+	devtool: 'cheap-source-map',
 	plugins: [
+	    new webpack.DefinePlugin({
+	      'process.env':{
+	        'NODE_ENV': JSON.stringify('production')
+	      }
+	    }),
 		new ExtractTextPlugin("style.css", {
 			allChunks: true
 		}),
 		new HtmlWebpackPlugin({
 		    title: 'BeFr Hauling fee calculator',
 		    filename: 'index.html'
-   		})
+   		}),
+   		new webpack.optimize.UglifyJsPlugin({
+	      compress:{
+	        warnings: true
+	      }
+	    })
 	]
 };
