@@ -13,8 +13,7 @@ const state = {
 	volume: "",
 	collateral: "",
 	route: tradeRoutes[0],
-	cost: 0,
-	language: i18n.language
+	cost: 0
 };
 
 let onChangeCallback = null;
@@ -40,11 +39,6 @@ export const onCollateralChanged = (newCollateral) => {
 
 export const onRouteChanged = (newRoute) => {
 	state.route = newRoute;
-	updateState();
-};
-
-export const onLanguageChanged = (newLanguage) => {
-	state.language = language;
 	updateState();
 };
 

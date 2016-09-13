@@ -62,8 +62,8 @@ const View = ({state, t}) => (
     <div>
         <AppBar
             title={t('TITLE')}
-            iconElementRight={<IconButton>{getSwitchIcon()}</IconButton>}
-            iconElementLeft={<span/>}
+            showMenuIconButton={false}
+            iconElementRight={<IconButton onTouchTap={switchLanguage}>{getSwitchIcon()}</IconButton>}
             onRightIconButtonTouchTap={switchLanguage}
         />
         <Paper style = {paperStyle} zDepth={1}>
