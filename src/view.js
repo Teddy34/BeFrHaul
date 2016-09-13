@@ -54,7 +54,6 @@ const getSwitchIcon = () => {
 };
 
 const switchLanguage = () => {
-    console.log(i18n.language === 'fr'?'en':'fr');
     i18n.changeLanguage(i18n.language === 'fr'?'en':'fr')
 };
 
