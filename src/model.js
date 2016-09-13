@@ -1,7 +1,8 @@
 // mini model
 import tradeRoutes from '../assets/tradeRoutes';
 import computeHaulingCost from './computeHaulingCost';
-import partial from 'lodash/partial'
+import partial from 'lodash/partial';
+import i18n from 'i18next';
 
 import numbro from 'numbro';
 
@@ -12,8 +13,9 @@ const state = {
 	volume: "",
 	collateral: "",
 	route: tradeRoutes[0],
-	cost: 0
-}
+	cost: 0,
+	language: i18n.language
+};
 
 let onChangeCallback = null;
 
@@ -38,6 +40,11 @@ export const onCollateralChanged = (newCollateral) => {
 
 export const onRouteChanged = (newRoute) => {
 	state.route = newRoute;
+	updateState();
+};
+
+export const onLanguageChanged = (newLanguage) => {
+	state.language = language;
 	updateState();
 };
 

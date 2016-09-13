@@ -6,6 +6,12 @@ import DropDownMenu from 'material-ui/DropDownMenu';
 import MenuItem from 'material-ui/MenuItem';
 import Paper from 'material-ui/Paper';
 import numbro from 'numbro';
+import i18n from 'i18next';
+import IconButton from 'material-ui/IconButton';
+import {
+  Icon_Flag_FR,
+  Icon_Flag_US
+} from 'material-ui-country-flags';
 
 import './style.css';
 
@@ -43,10 +49,22 @@ const fieldStyle = {
     textAlign: 'right'
 };
 
+const getSwitchIcon = () => {
+    return i18n.language === 'fr' ? <Icon_Flag_US /> : <Icon_Flag_FR />;
+};
+
+const switchLanguage = () => {
+    console.log(i18n.language === 'fr'?'en':'fr');
+    i18n.changeLanguage(i18n.language === 'fr'?'en':'fr')
+};
+
 const View = ({state, t}) => (
     <div>
         <AppBar
             title={t('TITLE')}
+            iconElementRight={<IconButton>{getSwitchIcon()}</IconButton>}
+            iconElementLeft={<span/>}
+            onRightIconButtonTouchTap={switchLanguage}
         />
         <Paper style = {paperStyle} zDepth={1}>
         <div>
