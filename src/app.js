@@ -7,11 +7,17 @@ injectTapEventPlugin();
 import _ from 'lodash';
 import View from './view';
 import {getState, registerCallback} from './model';
+import i18n from './i18n'; // initialized i18next instance
+import { I18nextProvider } from 'react-i18next';
+
+window.i18n = i18n;
 
 const App = () => (
-  <MuiThemeProvider>
-    <View state={getState()}/>
-  </MuiThemeProvider>
+  <I18nextProvider i18n={ i18n }>
+    <MuiThemeProvider>
+      <View state={getState()}/>
+    </MuiThemeProvider>
+  </I18nextProvider>
 );
 
 const root = document.createElement('div');;

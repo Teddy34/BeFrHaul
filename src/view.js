@@ -1,4 +1,5 @@
 import React from 'react';
+import { translate } from 'react-i18next';
 import TextField from 'material-ui/TextField';
 import AppBar from 'material-ui/AppBar';
 import DropDownMenu from 'material-ui/DropDownMenu';
@@ -42,37 +43,37 @@ const fieldStyle = {
     textAlign: 'right'
 };
 
-const View = (props) => (
+const View = ({state, t}) => (
     <div>
         <AppBar
-            title='BeFr hauling fee calculator'
+            title={t('TITLE')}
         />
         <Paper style = {paperStyle} zDepth={1}>
         <div>
-            Route: <DropDownMenu  value={props.state.route} onChange={onSelectedRouteChanged}>
-            {props.state.tradeRoutes.map((route) => <MenuItem key={route.type} primaryText={getLabel(route)} value={route}/>)}
+            {t('ROUTE')} <DropDownMenu  value={state.route} onChange={onSelectedRouteChanged}>
+            {state.tradeRoutes.map((route) => <MenuItem key={route.type} primaryText={getLabel(route)} value={route}/>)}
             </DropDownMenu>
         </div>
         <div>
-            Volume: <TextField id='text-field-volume' style={fieldStyle} hintText='Enter your volume here' value={props.state.volume} onChange={onSelectedVolumeChanged}/>
-            <span className="input-helper">({numbro(props.state.volume || 0).format()})</span>        
+            {t('VOLUME')} <TextField id='text-field-volume' style={fieldStyle} hintText={t('VOLUME_PLACEHOLDER')} value={state.volume} onChange={onSelectedVolumeChanged}/>
+            <span className="input-helper">({numbro(state.volume || 0).format()})</span>        
         </div>
         <div>
-            Collateral: <TextField id='text-field-collateral' style={fieldStyle} hintText='Enter your collateral here' value={props.state.collateral} onChange={onSelectedCollateralChanged}/>
-            <span className="input-helper">({numbro(props.state.collateral || 0).format()})</span>
+            {t('COLLATERAL')} <TextField id='text-field-collateral' style={fieldStyle} hintText={t('COLLATERAL_PLACEHOLDER')} value={state.collateral} onChange={onSelectedCollateralChanged}/>
+            <span className="input-helper">({numbro(state.collateral || 0).format()})</span>
         </div>
-        <div className='result'>Minimum fee: {formatCost(props.state.cost)}</div>
+        <div className='result'> {t('FEE')} {formatCost(state.cost)}</div>
         </Paper>
         <div className='doc'>
-            '.' is a decimal separator (10.2) <br/>
-            ',' is a thousands separator (1,234,456)<br/>
-            You can use 'k', 'm', 'b' for values (1.12b)
+             {t('DOC_DECIMAL')} <br/>
+             {t('DOC_THOUSAND')}<br/>
+             {t('DOC_KMB')}
         </div>
         <div className='disclaimer'>
-            Courtesy of Tethys Luxor, for Beyond Frontier
+             {t('DISCLAIMER')}
         </div>
 
     </div>
 );
 
-export default View;
+export default translate(['common'])(View);

@@ -6,7 +6,7 @@ module.exports = {
 	entry: ['./src/app.js'],
 	output: {
 		path: path.resolve(__dirname, 'build'),
-		filename: 'appBundle.js'
+		filename: 'appBundle.js',
 	},
 	module: {
 		loaders: [
@@ -22,6 +22,7 @@ module.exports = {
 			},
 		}]
 	},
+	devtool: 'source-map',
 	plugins: [
 		new ExtractTextPlugin("style.css", {
 			allChunks: true
