@@ -64,7 +64,6 @@ const View = ({state, t}) => (
             title={t('TITLE')}
             showMenuIconButton={false}
             iconElementRight={<IconButton onTouchTap={switchLanguage}>{getSwitchIcon()}</IconButton>}
-            onRightIconButtonTouchTap={switchLanguage}
         />
         <Paper style = {paperStyle} zDepth={1}>
         <div>
