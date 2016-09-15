@@ -24,7 +24,7 @@ import {
 
 //temp
 import tradeRoutes from '../assets/tradeRoutes';
-const getLabel = (route) => (route.type + ': ' + route.origin + (route.isBothWays? ' <=> ':' => ') + route.destination +(route.isFixedVolumeCharge?" full freighter":""));
+const getLabel = (route) => (route.type + ': ' + route.origin + (route.isBothWays? ' <=> ':' => ') + route.destination);
 
 const formatCost = (value) => {
     let formattedValue = numbro(value).format('0a');

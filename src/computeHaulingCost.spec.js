@@ -4,13 +4,13 @@ import test from 'tape';
 const testVariableVolumeRoute = {
     collateralCharge: 0.02,
     volumeCharge: 300,
-    isFixedVolumeCharge: false,
+    fixedCost: 0,
 };
 
 const testFixedVolumeRoute =    {
     collateralCharge: 0.01,
-    volumeCharge: 90000000,
-    isFixedVolumeCharge: true,
+    volumeCharge: 0,
+    fixedCost: 90000000,
 };
 
 test('check variable volume computation', (assert) => {

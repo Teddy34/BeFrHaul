@@ -6,7 +6,7 @@ export default [
         maxVolume: 350000,
         collateralCharge: 0.02,
         volumeCharge: 300,
-        isFixedVolumeCharge: false,
+        fixedCost: 0,
         isBothWays: false
     },
     {
@@ -15,8 +15,8 @@ export default [
         destination: "DO6H-Q II - C'EST LE NORD",
         maxVolume: 350000,
         collateralCharge: 0.01,
-        volumeCharge: 90000000,
-        isFixedVolumeCharge: true,
+        volumeCharge: 0,
+        fixedCost: 90000000,
         isBothWays: false
     },
      {
@@ -26,7 +26,7 @@ export default [
         maxVolume: 350000,
         collateralCharge:0.02,
         volumeCharge:30,
-        isFixedVolumeCharge:false,
+        fixedCost:0,
         isBothWays: false
     },
     {
@@ -35,8 +35,8 @@ export default [
         destination: "P-33KR II - 7o Vile Rat",
         maxVolume: 350000,
         collateralCharge: 0.02,
-        volumeCharge: 5000000,
-        isFixedVolumeCharge:true,
+        volumeCharge: 0,
+        fixedCost:5000000,
         isBothWays: true
     },
         {
@@ -45,8 +45,8 @@ export default [
         destination: "E-9ORY I - Tactical NBI Long Point Stash",
         maxVolume: 350000,
         collateralCharge: 0.02,
-        volumeCharge: 5000000,
-        isFixedVolumeCharge:true,
+        volumeCharge: 0,
+        fixedCost:5000000,
         isBothWays: true
     },
         {
@@ -55,8 +55,8 @@ export default [
         destination: "C8-CHY X - Braveguette",
         maxVolume: 350000,
         collateralCharge: 0.02,
-        volumeCharge: 8000000,
-        isFixedVolumeCharge: true,
+        volumeCharge: 0,
+        fixedCost: 8000000,
         isBothWays: true
     },
 
@@ -67,7 +67,7 @@ export default [
         maxVolume: 350000,
         collateralCharge: 0.03,
         volumeCharge: 150,
-        isFixedVolumeCharge: false,
+        fixedCost: 0,
         isBothWays: false
     },
         {
@@ -76,8 +76,8 @@ export default [
         destination: "Onnamon I - State War Academy",
         maxVolume: 350000,
         collateralCharge: 0.01,
-        volumeCharge: 90000000,
-        isFixedVolumeCharge: true,
+        volumeCharge: 0,
+        fixedCost: 90000000,
         isBothWays: false
     }    
 ]

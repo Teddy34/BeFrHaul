@@ -6,8 +6,7 @@ const computeHaulingCost = (tradeRoute, collateral, volume) => {
 		return null;
 	}
 
-    let cost = collateral * tradeRoute.collateralCharge;
-    cost += tradeRoute.isFixedVolumeCharge ? tradeRoute.volumeCharge : tradeRoute.volumeCharge * volume;
+    const cost = tradeRoute.fixedCost + tradeRoute.volumeCharge * volume + collateral * tradeRoute.collateralCharge;
     return Math.ceil(cost);
 };
 
