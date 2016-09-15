@@ -6,14 +6,17 @@ injectTapEventPlugin();
 
 import _ from 'lodash';
 import View from './view';
+import CircularProgress from 'material-ui/CircularProgress';
 import {getState, registerCallback} from './model';
 import i18n from './i18n'; // initialized i18next instance
 import { I18nextProvider } from 'react-i18next';
 
+const getView = () => getState().tradeRoutes?<View state={getState()}/>:<CircularProgress size={2} />
+
 const App = () => (
   <I18nextProvider i18n={ i18n }>
     <MuiThemeProvider>
-      <View state={getState()}/>
+      {getView()}
     </MuiThemeProvider>
   </I18nextProvider>
 );

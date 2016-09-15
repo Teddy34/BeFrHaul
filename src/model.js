@@ -1,18 +1,24 @@
 // mini model
-import tradeRoutes from '../assets/tradeRoutes';
 import computeHaulingCost from './computeHaulingCost';
 import partial from 'lodash/partial';
 import i18n from 'i18next';
 
 import numbro from 'numbro';
 
+import routeListPromise from './fetchRoutes';
+routeListPromise.then((data) => {
+	state.tradeRoutes = data;
+	state.route = data[0];
+	updateState();
+	});
+
 const numberize = (numberAsString) => numbro(numberAsString).value() || 0;
 
 const state = {
-	tradeRoutes: tradeRoutes,
+	tradeRoutes: null,
 	volume: "",
 	collateral: "",
-	route: tradeRoutes[0],
+	route: null,
 	cost: 0
 };
 
