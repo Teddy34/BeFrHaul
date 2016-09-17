@@ -36,7 +36,7 @@ i18n
           'TITLE': 'Calculatrice de frais de transport',
           'ROUTE': 'Route :',
           'VOLUME': 'Volume',
-          'MAX_VOLUME_REACHED': 'Volue Maximum dépassé',
+          'MAX_VOLUME_REACHED': 'Volume Maximum dépassé',
           'COLLATERAL': 'Collateral',
           'FEE': 'Frais minimum :',
           'VOLUME_PLACEHOLDER': 'Tapez votre volume ici',
