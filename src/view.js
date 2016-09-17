@@ -55,8 +55,16 @@ const switchLanguage = () => {
     i18n.changeLanguage(i18n.language === 'fr'?'en':'fr')
 };
 
+const numberize = (numberAsString) => numbro(numberAsString).value() || 0;
+
+const getVolumeErrorMsg = (volume, volumeMax) => {
+  console.log(volume, volumeMax, (volume > volumeMax));
+  return (volume > volumeMax) ? 'MAX_VOLUME_REACHED': '';
+}
+
 const View = ({state, t}) => (
     <div>
+    {console.log(state)}
         <AppBar
             title={t('TITLE')}
             showMenuIconButton={false}
@@ -69,12 +77,10 @@ const View = ({state, t}) => (
             </DropDownMenu>
         </div>
         <div>
-            {t('VOLUME')} <TextField id='text-field-volume' style={fieldStyle} hintText={t('VOLUME_PLACEHOLDER')} value={state.volume} onChange={onSelectedVolumeChanged}/>
-            <span className="input-helper">({numbro(state.volume || 0).format()})</span>        
+            <TextField id='text-field-volume' floatingLabelText={t('VOLUME') + ' (' + numbro(state.volume || 0).format() + ')'} errorText={t(getVolumeErrorMsg(numberize(state.volume), state.route.maxVolume))} style={fieldStyle} hintText={t('VOLUME_PLACEHOLDER')} value={state.volume} onChange={onSelectedVolumeChanged}/>     
         </div>
         <div>
-            {t('COLLATERAL')} <TextField id='text-field-collateral' style={fieldStyle} hintText={t('COLLATERAL_PLACEHOLDER')} value={state.collateral} onChange={onSelectedCollateralChanged}/>
-            <span className="input-helper">({numbro(state.collateral || 0).format()})</span>
+            <TextField id='text-field-collateral' floatingLabelText={t('COLLATERAL') + ' (' + numbro(state.collateral || 0).format() + ')'} style={fieldStyle} hintText={t('COLLATERAL_PLACEHOLDER')} value={state.collateral} onChange={onSelectedCollateralChanged}/>
         </div>
         <div className='result'> {t('FEE')} {formatCost(state.cost)}</div>
         </Paper>

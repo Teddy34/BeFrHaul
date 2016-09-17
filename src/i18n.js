@@ -19,8 +19,9 @@ i18n
         common: {
           'TITLE': 'Hauling Fee Calculator',
           'ROUTE': 'Route:',
-          'VOLUME': 'Volume:',
-          'COLLATERAL': 'Collateral:',
+          'VOLUME': 'Volume',
+          'MAX_VOLUME_REACHED': 'Maximum volume reached',
+          'COLLATERAL': 'Collateral',
           'FEE': 'Minimum fee:',
           'VOLUME_PLACEHOLDER': 'Enter your volume here',
           'COLLATERAL_PLACEHOLDER': 'Enter your collateral here',
@@ -34,8 +35,9 @@ i18n
         common: {
           'TITLE': 'Calculatrice de frais de transport',
           'ROUTE': 'Route :',
-          'VOLUME': 'Volume :',
-          'COLLATERAL': 'Collateral :',
+          'VOLUME': 'Volume',
+          'MAX_VOLUME_REACHED': 'Volue Maximum dépassé',
+          'COLLATERAL': 'Collateral',
           'FEE': 'Frais minimum :',
           'VOLUME_PLACEHOLDER': 'Tapez votre volume ici',
           'COLLATERAL_PLACEHOLDER': 'Tapez votre collateral ici',
